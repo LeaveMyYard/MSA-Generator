@@ -38,8 +38,6 @@ print(
     + r"""} \;$. \\"""
 )
 
-grouped = table.groupby("X")
-
 groups = []
 mean_values = []
 results = []
@@ -61,6 +59,7 @@ print(
 \hline"""
 )
 
+grouped = table.groupby("X")
 for i, (x, group) in enumerate(grouped):
     group = group.set_index(
         pd.Index(range(current_index, current_index + len(group))), drop=True
