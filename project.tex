@@ -1,0 +1,617 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}        
+\usepackage[T2A]{fontenc}    
+\usepackage[utf8]{inputenc}  
+\usepackage[russian]{babel}  
+\usepackage{amsmath}
+\usepackage{graphicx}        
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{hyperref}        
+\usepackage{hyphenat}        
+\usepackage{listings}        
+\usepackage{color}
+\usepackage{float}
+\usepackage{comment}
+
+\usepackage{rotating}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+\graphicspath{./}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcommand{\bigcell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\newcommand{\me}{\mathrm{e}}
+
+\addto\captionsrussian{\renewcommand{\contentsname}{Зміст}}
+
+\lstset{
+  frame=none,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\setcounter{tocdepth}{3} %%where n is the level, starting with 0(chapters only)
+
+
+\begin{document}
+
+\begin{center}
+\large{Одеський національний університет імені І.І.Мечникова
+    \newline
+Факультет математики, фізики та інформаційних технологій
+    \newline
+}
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\\
+\\
+\\
+\\
+\bigbreak
+\LARGE{ \textbf{Лабораторна робота}
+\bigbreak
+\textbf{Варіант 5}
+\bigbreak
+
+\bigbreak
+}
+\end{center}
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\begin{flushright}
+\large{Звіт студента ІІІ курсу
+\bigbreak
+денної форми навчання
+\bigbreak
+спеціальності
+\bigbreak
+113 Прикладна математика
+\bigbreak
+Жукова Павла Петровича
+\bigbreak
+\begin{center}
+
+  \bigbreak
+  \
+  \bigbreak
+  \
+  \bigbreak
+  \
+  \bigbreak
+  \
+  \LARGE{ {}
+  \
+\bigbreak
+\
+\bigbreak
+}
+                  2020
+
+\end{center}
+}
+\end{flushright}
+
+\newpage
+\section{Завдання №1}
+1. Згрупувати початкові дані за незалежною ознакою. \\
+2. Розрахувати коефіцієнт детермінації. \\
+3. Розрахувати коефіцієнт Фехнера.\\
+4. Сформулювати висновки.
+\subsection{Розв'язання}
+Розглядаються наступні показники виробничо-господарської діяльності 30 підприємств:
+\\
+\textbf{Y1} — Продуктивнiсть працi\\
+\textbf{X7} — Фондовiддача\\ \\
+Спочатку згрупуємо початкові дані за незалежною ознакою $X_{7} \;$. \\ Згруповані дані представимо у вигляді таблиці. \\
+За даними таблиці розрахуємо коефіцієнт детермінації між $X_{7} \;$ і $Y_{1} \;$. \\
+\begin{tabular}{ |c| c| c|} 
+\hline
+\bigcell{l}{Фондовiддача}
+& 
+\bigcell{l}{Продуктивнiсть працi} 
+& 
+\bigcell{l}{} \\
+\hline
+\bigcell{l}{$x_{1} = \dots = x_{7} = 1.3$}
+&
+\bigcell{l}{$\displaystyle y_{1} = 10.02, \;\; y_{2} = 9.42, \;\; y_{3} = 7.24, \\
+y_{4} = 5.39, \;\; y_{5} = 6.57, \;\; y_{6} = 4.23, \\
+y_{7} = 11.03, \;\; $}
+&
+\bigcell{l}{$\displaystyle \overline{y_{1}} = 7.7\\
+\displaystyle\sum_{i = 1}^{7}(y_i - \overline{y})^2 = 38.295$}\\
+\hline
+\bigcell{l}{$x_{8} = \dots = x_{20} = 1.4$}
+&
+\bigcell{l}{$\displaystyle y_{8} = 9.37, \;\; y_{9} = 6.67, \;\; y_{10} = 5.68, \\
+y_{11} = 5.22, \;\; y_{12} = 8.16, \;\; y_{13} = 6.48, \\
+y_{14} = 8.77, \;\; y_{15} = 9.02, \;\; y_{16} = 6.7, \\
+y_{17} = 6.69, \;\; y_{18} = 5.61, \;\; y_{19} = 5.59, \\
+y_{20} = 18.0, \;\; $}
+&
+\bigcell{l}{$\displaystyle \overline{y_{2}} = 7.843\\
+\displaystyle\sum_{i = 8}^{20}(y_i - \overline{y})^2 = 135.332$}\\
+\hline
+\bigcell{l}{$x_{21} = \dots = x_{28} = 1.6$}
+&
+\bigcell{l}{$\displaystyle y_{21} = 13.17, \;\; y_{22} = 3.78, \;\; y_{23} = 10.44, \\
+y_{24} = 7.65, \;\; y_{25} = 7.0, \;\; y_{26} = 11.06, \\
+y_{27} = 13.28, \;\; y_{28} = 9.27, \;\; $}
+&
+\bigcell{l}{$\displaystyle \overline{y_{3}} = 9.456\\
+\displaystyle\sum_{i = 21}^{28}(y_i - \overline{y})^2 = 73.503$}\\
+\hline
+\bigcell{l}{$x_{29} = 1.7$}
+&
+\bigcell{l}{$\displaystyle y_{29} = 5.22, \;\; $}
+&
+\bigcell{l}{$\displaystyle \overline{y_{4}} = 5.22\\
+\displaystyle\sum_{i = 29}^{29}(y_i - \overline{y})^2 = 0.0$}\\
+\hline
+\bigcell{l}{$x_{30} = 1.9$}
+&
+\bigcell{l}{$\displaystyle y_{30} = 6.54, \;\; $}
+&
+\bigcell{l}{$\displaystyle \overline{y_{5}} = 6.54\\
+\displaystyle\sum_{i = 30}^{30}(y_i - \overline{y})^2 = 0.0$}\\
+\hline
+\end{tabular} \\ \\ \\ \\ 
+Нехай нас цікавить ступінь тісноти статистичного зв’язку між результуючим показником y та пояснюючою змінною x. Очевидно, що ступінь тісноти зв’язку можна вважати максимальним, якщо по заданому значенню змінної x можна відтворити відповідне значення змінної y. І навпаки: якщо значення величини x не несе ніякої інформації про значення показника y , то зв’язок відсутній зовсім, і відповідний вимірник ступеня його тісноти повинен приймати мінімально можливе значення.\\
+Введемо поняття ступеня виміру тісноти зв’язку під назвою коефіцієнт детермінації. Розглянемо його вибіркову характеристику. Обчислення вибіркового (емпіричного) значення коефіцієнта детермінації y по x виконується
+за формулою 
+Розрахуємо вибіркове значення дисперсії "нев'язок"  $\displaystyle \epsilon(x):$ згідно з формулою: $$\displaystyle S_{\epsilon}^2 = \frac{1}{n}\sum_{j=1}^s\sum_{i = 1}^{\nu_j}(y_{ji} - \overline{y_j})^2$$ отримаємо: 
+$$\displaystyle S_{\epsilon}^2 = \frac{1}{30}(38.295 + 135.332 + 73.503 + 0.0 + 0.0) = 8.238$$
+Далі розрахуємо $\displaystyle \overline{y} \; - $ середнє значення ознаки:
+$$\displaystyle \overline{y} = \frac{1}{n}\sum_{i=1}^{n}y_{i} = \frac{1}{30}\sum_{i=1}^{30}y_{i} = 8.109$$
+Тоді середнє значення ознаки буде дорівнювати:
+$$\displaystyle S^{2}_{y} = \frac{\displaystyle \sum_{i=1}^{n} (y_{i} - \overline{y})^2}{n} = \frac{1}{30}\sum_{i=1}^{30} (y_{i} - \overline{y})^2 = 9.152$$
+Маємо:
+$$\displaystyle \widehat{K}_{d}(y;x) = 1 - \displaystyle\frac{\displaystyle S^{2}_{\epsilon}}{\displaystyle S^{2}_{y}} = 1 - \frac{8.238}{9.152} = 0.0999$$
+\subsection{Висновок}
+Коефіцієнт детермінації -  поняття ступеня виміру тісноти зв’язку, це статистичний показник, що використовується в статистичних моделях як міра залежності варіації залежної змінної від варіації незалежних змінних.  Вiн характеризує долю варiацiї залежної змiнної, обумовленої регресiєю. \\
+Коефiцiєнт детермiнацiї належить промiжку $[0;1].$ Чим ближче значення коефіцієнта до 1, тим сильніше залежність і тим краще модель описує статистичні дані. 
+У моєму випадку значення $K_{d} = 0.0999,$ тобто він вказує на те, що 9.99\% варіації рівняпродуктивності праці на досліджуваних підприємствах зумовлено варіацією фондовідаччі. При значеннях показників тісноти зв'язку менше $0.7$ величина коефіцієнта детермінації завжди буде нижче 50\%. Це означає, що на частку варіації факторних ознак доводиться менша частина в порівнянні з іншими неврахованими в моделі факторами, що впливають на зміну результативного показника. Побудовані при таких умовах регресивні моделі мають низьке практичне значення.
+\subsection{Коефiцiєнт Фехнера}
+Коефіцієнт Фехнера визначається виразом:
+$$\displaystyle K_{\phi} = \frac{C - H}{n}$$
+де $C, \; H$ - число випадків (спостережень, об’єктів), в яких по парі ознак $x$ і $y$ спостерігається відповідно збіг або незбіг знаків відхилень від середніх рівнів, а $n$ – кількість спостережень. \\
+Зазначимо, що коефіцієнт Фехнера за абсолютною величиною не перевищує 1. Якщо він дорівнює $\pm 1$, то зв’язок між ознаками близький до функціонального. Про вигляд зв’язку – лінійний чи нелінійний – по величині коефіцієнта Фехнера нічого певного сказати не можна. \\
+Визначити, чи існує зв’язок між фондовідаччею та продуктивністю праці, використовуючи дані таблиці. \\
+\begin{table}[H]
+\centering
+\begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+\hline
+\bigcell{l}{\\$i$}
+& 
+\bigcell{l}{$1$}
+& 
+\bigcell{l}{$2$}
+& 
+\bigcell{l}{$3$}
+& 
+\bigcell{l}{$4$}
+& 
+\bigcell{l}{$5$}
+& 
+\bigcell{l}{$6$}
+& 
+\bigcell{l}{$7$}
+& 
+\bigcell{l}{$8$}
+\\
+\hline
+\bigcell{l}{Фондовiдачча $x$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.6$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.3$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.6$}
+\\
+\hline
+\bigcell{l}{Знак \\ $x-\overline{x}$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+\\
+\hline
+\bigcell{l}{Продуктивнiсть працi $y$}
+&
+\bigcell{l}{$9.37$}
+&
+\bigcell{l}{$13.17$}
+&
+\bigcell{l}{$6.67$}
+&
+\bigcell{l}{$5.68$}
+&
+\bigcell{l}{$5.22$}
+&
+\bigcell{l}{$10.02$}
+&
+\bigcell{l}{$8.16$}
+&
+\bigcell{l}{$3.78$}
+\\
+\hline
+\bigcell{l}{Знак \\ $y-\overline{y}$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+\\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+\hline
+\bigcell{l}{\\$i$}
+& 
+\bigcell{l}{$9$}
+& 
+\bigcell{l}{$10$}
+& 
+\bigcell{l}{$11$}
+& 
+\bigcell{l}{$12$}
+& 
+\bigcell{l}{$13$}
+& 
+\bigcell{l}{$14$}
+& 
+\bigcell{l}{$15$}
+& 
+\bigcell{l}{$16$}
+\\
+\hline
+\bigcell{l}{Фондовiдачча $x$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.6$}
+&
+\bigcell{l}{$1.6$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.6$}
+&
+\bigcell{l}{$1.6$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.6$}
+\\
+\hline
+\bigcell{l}{Знак \\ $x-\overline{x}$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+\\
+\hline
+\bigcell{l}{Продуктивнiсть працi $y$}
+&
+\bigcell{l}{$6.48$}
+&
+\bigcell{l}{$10.44$}
+&
+\bigcell{l}{$7.65$}
+&
+\bigcell{l}{$8.77$}
+&
+\bigcell{l}{$7.0$}
+&
+\bigcell{l}{$11.06$}
+&
+\bigcell{l}{$9.02$}
+&
+\bigcell{l}{$13.28$}
+\\
+\hline
+\bigcell{l}{Знак \\ $y-\overline{y}$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$+$}
+\\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+\hline
+\bigcell{l}{\\$i$}
+& 
+\bigcell{l}{$17$}
+& 
+\bigcell{l}{$18$}
+& 
+\bigcell{l}{$19$}
+& 
+\bigcell{l}{$20$}
+& 
+\bigcell{l}{$21$}
+& 
+\bigcell{l}{$22$}
+& 
+\bigcell{l}{$23$}
+& 
+\bigcell{l}{$24$}
+\\
+\hline
+\bigcell{l}{Фондовiдачча $x$}
+&
+\bigcell{l}{$1.6$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.3$}
+&
+\bigcell{l}{$1.3$}
+&
+\bigcell{l}{$1.3$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.4$}
+\\
+\hline
+\bigcell{l}{Знак \\ $x-\overline{x}$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+\\
+\hline
+\bigcell{l}{Продуктивнiсть працi $y$}
+&
+\bigcell{l}{$9.27$}
+&
+\bigcell{l}{$6.7$}
+&
+\bigcell{l}{$6.69$}
+&
+\bigcell{l}{$9.42$}
+&
+\bigcell{l}{$7.24$}
+&
+\bigcell{l}{$5.39$}
+&
+\bigcell{l}{$5.61$}
+&
+\bigcell{l}{$5.59$}
+\\
+\hline
+\bigcell{l}{Знак \\ $y-\overline{y}$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+\\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+\hline
+\bigcell{l}{\\$i$}
+& 
+\bigcell{l}{$25$}
+& 
+\bigcell{l}{$26$}
+& 
+\bigcell{l}{$27$}
+& 
+\bigcell{l}{$28$}
+& 
+\bigcell{l}{$29$}
+& 
+\bigcell{l}{$30$}
+& 
+\bigcell{l}{$$\sum$$}
+& 
+\bigcell{l}{$$\overline{z}$$}
+\\
+\hline
+\bigcell{l}{Фондовiдачча $x$}
+&
+\bigcell{l}{$1.3$}
+&
+\bigcell{l}{$1.9$}
+&
+\bigcell{l}{$1.3$}
+&
+\bigcell{l}{$1.7$}
+&
+\bigcell{l}{$1.4$}
+&
+\bigcell{l}{$1.3$}
+&
+\bigcell{l}{$43.7$}
+&
+\bigcell{l}{$1.457$}
+\\
+\hline
+\bigcell{l}{Знак \\ $x-\overline{x}$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{}
+&
+\bigcell{l}{}
+\\
+\hline
+\bigcell{l}{Продуктивнiсть працi $y$}
+&
+\bigcell{l}{$6.57$}
+&
+\bigcell{l}{$6.54$}
+&
+\bigcell{l}{$4.23$}
+&
+\bigcell{l}{$5.22$}
+&
+\bigcell{l}{$18.0$}
+&
+\bigcell{l}{$11.03$}
+&
+\bigcell{l}{$243.27$}
+&
+\bigcell{l}{$8.109$}
+\\
+\hline
+\bigcell{l}{Знак \\ $y-\overline{y}$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$-$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{$+$}
+&
+\bigcell{l}{}
+&
+\bigcell{l}{}
+\\
+\hline
+\end{tabular}
+\end{table}
+Маємо  $C = 17, \; \; H = 13,$ тоді
+$$\displaystyle K_{\phi} = \frac{C - H}{n} = 0.13$$
+\end{document}
