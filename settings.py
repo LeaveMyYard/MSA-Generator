@@ -53,3 +53,8 @@ task_3_y1 = (
 task_3_y2 = (
     tables["А.3"].loc[tables["А.3"]["Варіант"] == variant]["Y для завд. 4(2)"].values[0]
 )
+
+# ----- Task 5 -----
+
+task_3_1 = tables["А.5"].loc[tables["А.5"]["Варіант"] == variant]["Ознаки1"].values[0]
+task_3_2 = tables["А.5"].loc[tables["А.5"]["Варіант"] == variant]["Ознаки2"].values[0]

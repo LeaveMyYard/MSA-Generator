@@ -1,6 +1,9 @@
+from data.table_a6 import table
+from scipy.stats import rankdata
+import numpy as np
 
-
-print(r"""\newpage
+print(
+    r"""\newpage
 \section{Завдання 5}
 Розглядаються 17 показників ефективності виробничо-господарської діяльності 40 підприємств:\\
 1 Продуктивність праці\\
@@ -31,4 +34,32 @@ print(r"""\newpage
 \includegraphics[width = 16cm, height = 6cm]{13.PNG} \\
 \includegraphics[width = 16cm, height = 15cm]{14.PNG} \\ 
 \includegraphics[width = 16cm, height = 6cm]{15.PNG} \\ 
-Проранжуємо показники ефективності виробничо-господарської діяльності 40 підприємств, отримаємо:\\""")
+Проранжуємо показники ефективності виробничо-господарської діяльності 40 підприємств, отримаємо:\\"""
+)
+
+first = np.array(table["1"])
+ranks1 = rankdata(first, method="min")
+
+second = np.array(table["2"])
+ranks2 = rankdata(second, method="min")
+
+print(f"$X = (" + ", ".join([str(i + 1) for i in ranks1]) + ")^T$\\")
+print(f"$Y = (" + ", ".join([str(i + 1) for i in ranks2]) + ")^T$\\")
+
+print(
+    r"""Так как в матрице имеются связанные ранги (одинаковый ранговый номер) 2-го ряда, произведем их переформирование. Переформирование рангов производиться без изменения важности ранга, то есть между ранговыми номерами должны сохраниться соответствующие соотношения (больше, меньше или равно). Также не рекомендуется ставить ранг выше 1 и ниже значения равного количеству параметров (в данном случае n = 40). \\"""
+)
+
+ranks1 = rankdata(first)
+ranks2 = rankdata(second)
+
+print(f"$X = (" + ", ".join([str(i + 1) for i in ranks1]) + ")^T$\\")
+print(f"$Y = (" + ", ".join([str(i + 1) for i in ranks2]) + ")^T$\\")
+
+print(
+    f"У першій ранжировцi маємо {len(ranks1) - len(set(ranks1))} значень з нерозрiзненими рангами."
+)
+
+print(
+    f"У другiй ранжировцi маємо {len(ranks2) - len(set(ranks2))} значень з нерозрiзненими рангами."
+)
