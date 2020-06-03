@@ -28,7 +28,7 @@ tables = {
 task_1_y = tables["А.1"].loc[tables["А.1"]["Варіант"] == variant]["Y"].values[0]
 task_1_x = tables["А.1"].loc[tables["А.1"]["Варіант"] == variant]["X"].values[0]
 
-# ----- task 3 -----
+# ----- Task 3 -----
 
 task_2_y = (
     tables["А.3"].loc[tables["А.3"]["Варіант"] == variant]["Y для завд. 3"].values[0]
@@ -44,3 +44,12 @@ task_2_x_meaning = [
     task_2_x3_meaning,
     task_2_x4_meaning,
 ]
+
+# ----- Task 4 -----
+
+task_3_y1 = (
+    tables["А.3"].loc[tables["А.3"]["Варіант"] == variant]["Y для завд. 4(1)"].values[0]
+)
+task_3_y2 = (
+    tables["А.3"].loc[tables["А.3"]["Варіант"] == variant]["Y для завд. 4(2)"].values[0]
+)
