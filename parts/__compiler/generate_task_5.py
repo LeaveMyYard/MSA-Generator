@@ -48,8 +48,8 @@ k2 = sum([1 for i, k in table.groupby("2") if len(k) > 1])
 
 insert_nextline = lambda s: s[: s.find(" ", 70, 80)] + r"\\" + s[s.find(" ", 70, 80) :]
 
-print(f"$X = (" + insert_nextline(", ".join([str(i + 1) for i in ranks1])) + ")^T$\\")
-print(f"$Y = (" + insert_nextline(", ".join([str(i + 1) for i in ranks2])) + ")^T$\\")
+print(f"$X = (" + insert_nextline(", ".join([str(i + 1) for i in ranks1])) + ")^T$\\\\")
+print(f"$Y = (" + insert_nextline(", ".join([str(i + 1) for i in ranks2])) + ")^T$\\\\")
 
 print(f"У першій ранжировцi маємо {k1} груп нерозрiзнених рангiв.")
 print(f"У другiй ранжировцi маємо {k2} груп нерозрiзнених рангiв.")
@@ -146,7 +146,7 @@ print(
 
 placed_y = ranks2[first.argsort()]
 
-print("R_y: " + ", ".join([str(y) for y in placed_y]))
+print("$R_y: " + insert_nextline(", ".join([str(y) for y in placed_y])) + r"$\\")
 P = sum(
     [sum([1 for val2 in placed_y[i:] if val2 > val]) for i, val in enumerate(placed_y)]
 )
