@@ -46,8 +46,10 @@ ranks2 = rankdata(second, method="min")
 k1 = sum([1 for i, k in table.groupby("1") if len(k) > 1])
 k2 = sum([1 for i, k in table.groupby("2") if len(k) > 1])
 
-print(f"$X = (" + ", ".join([str(i + 1) for i in ranks1]) + ")^T$\\")
-print(f"$Y = (" + ", ".join([str(i + 1) for i in ranks2]) + ")^T$\\")
+insert_nextline = lambda s: s[: s.find(" ", 70, 80)] + r"\\" + s[s.find(" ", 70, 80) :]
+
+print(f"$X = (" + insert_nextline(", ".join([str(i + 1) for i in ranks1])) + ")^T$\\")
+print(f"$Y = (" + insert_nextline(", ".join([str(i + 1) for i in ranks2])) + ")^T$\\")
 
 print(f"У першій ранжировцi маємо {k1} груп нерозрiзнених рангiв.")
 print(f"У другiй ранжировцi маємо {k2} груп нерозрiзнених рангiв.")
