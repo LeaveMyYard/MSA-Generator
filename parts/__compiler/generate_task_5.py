@@ -54,8 +54,8 @@ print(f"$Y = (" + insert_nextline(", ".join([str(i + 1) for i in ranks2])) + ")^
 print(f"У першій ранжировцi маємо {k1} груп нерозрiзнених рангiв.")
 print(f"У другiй ранжировцi маємо {k2} груп нерозрiзнених рангiв.")
 
-Tx = sum([len(k) ** 3 - len(k) for i, k in table.groupby("1") if len(k) > 1])
-Ty = sum([len(k) ** 3 - len(k) for i, k in table.groupby("2") if len(k) > 1])
+Tx = sum([len(k) ** 3 - len(k) for i, k in table.groupby("1") if len(k) > 1]) / 12
+Ty = sum([len(k) ** 3 - len(k) for i, k in table.groupby("2") if len(k) > 1]) / 12
 
 if Tx == Ty == 0:
     print("Так як не має нерозрізнених рангів, використаємо формулу (1):")
