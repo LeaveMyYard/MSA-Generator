@@ -61,6 +61,23 @@ task_3_2 = tables["А.5"].loc[tables["А.5"]["Варіант"] == variant]["Оз
 
 # ----- Task 6 -----
 
-exp_1 = tables["А.8"].loc[tables["А.8"]["Варіант"] == variant]["Номери експертів(1)"].values[0]
-exp_2 = tables["А.8"].loc[tables["А.8"]["Варіант"] == variant]["Номери експертів(2)"].values[0]
-exp_3 = tables["А.8"].loc[tables["А.8"]["Варіант"] == variant]["Номери експертів(3)"].values[0]
+exp_1 = (
+    tables["А.8"]
+    .loc[tables["А.8"]["Варіант"] == variant]["Номери експертів(1)"]
+    .values[0]
+)
+exp_2 = (
+    tables["А.8"]
+    .loc[tables["А.8"]["Варіант"] == variant]["Номери експертів(2)"]
+    .values[0]
+)
+exp_3 = (
+    tables["А.8"]
+    .loc[tables["А.8"]["Варіант"] == variant]["Номери експертів(3)"]
+    .values[0]
+)
+
+# ----- Task 7 -----
+
+task_7_X = tables["А.9"].loc[tables["А.9"]["Варіант"] == variant]["Ознаки1"].values[0]
+task_7_Y = tables["А.9"].loc[tables["А.9"]["Варіант"] == variant]["Ознаки2"].values[0]
