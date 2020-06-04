@@ -34,4 +34,5 @@ class Logger(object):
 
 sys.stdout = Logger()
 
-generate()
+if __name__ == "__main__":
+    generate()

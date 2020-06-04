@@ -14,6 +14,47 @@ task_2_x2_meaning = "[!Народжуванність!]"
 task_2_x3_meaning = "[!Смертність!]"
 task_2_x4_meaning = "[!Відсоток грамотних!]"
 
+table_for_task_8 = pd.DataFrame(
+    data={
+        "< 25": [
+            18212 * variant,
+            1914 * variant,
+            147 * variant,
+            8 * variant,
+            4 * variant,
+        ],
+        "25-34": [
+            5574 * variant,
+            6677 * variant,
+            1112 * variant,
+            85 * variant,
+            18 * variant,
+        ],
+        "35-44": [
+            498 * variant,
+            2171 * variant,
+            2595 * variant,
+            419 * variant,
+            43 * variant,
+        ],
+        "44-54": [
+            98 * variant,
+            368 * variant,
+            1177 * variant,
+            1280 * variant,
+            308 * variant,
+        ],
+        "> 55": [
+            19 * variant,
+            75 * variant,
+            271 * variant,
+            840 * variant,
+            1701 * variant,
+        ],
+    },
+    columns=["< 25", "25-34", "35-44", "44-54", "> 55"],
+)
+
 
 # ----- Do not touch this -----
 
