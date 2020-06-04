@@ -140,7 +140,7 @@ chi_st = sum([(sum(value) - 21) ** 2 for name, value in table.iterrows()]) / (
 print(
     r"Маємо: $\displaystyle \chi_{CT}^2 = "
     + f"{round(chi_st, 3)}"
-    + ",$ а $\chi^2(0.05, 12) = 21.02607$\\ \\"
+    + ",$ а $\chi^2(0.05, 12) = 21.02607$\\\\"
 )
 
 if chi_st < chi_kr:
