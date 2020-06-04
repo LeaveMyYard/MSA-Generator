@@ -169,7 +169,7 @@ rKst = 0.22
 
 print(
     r"Розрахуємо ранговий коефіцієнт Кендалла $r^K$: $\displaystyle r^K = \displaystyle \frac{2S}{n(n-1)} = "
-    + f"\\frac{{{2*S}}}{{1560}} = {round(rK, 4)}.$ \\"
+    + f"\\frac{{{2*S}}}{{1560}} = {round(rK, 4)}.$ \\\\"
 )
 
 print(
