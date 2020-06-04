@@ -49,7 +49,7 @@ print(
     + (f"> {round(med1, 3)}" if settings.task_7_X != "С" else "Жінки")
     + r"""} \\ 
 \hline
-\bigcell{l}{$"""
+\bigcell{l}{$ \geq"""
     + f"{round(med2, 3)}"
     + r"""$}
 & 
@@ -61,7 +61,7 @@ print(
     + f"{b}"
     + r"""}\\
 \hline
-\bigcell{l}{$< """
+\bigcell{l}{$ < """
     + f"{round(med2, 3)}"
     + r"""$}
 & 
