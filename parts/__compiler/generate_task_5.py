@@ -100,7 +100,7 @@ else:
         (1 / 6 * (40 ** 3 - 30) - 2 * Tx) * (1 / 6 * (40 ** 3 - 30) - 2 * Ty)
     )
     print(
-        f"$$r^C = \\displaystyle\\frac{{\\displaystyle |\\frac{{1}}{{6}}(40^3 - 40) - {sumDi} - {Tx} - {Ty}}}{{\\displaystyle \\sqrt{{\\left [ \\frac{1}{6}(40^3 - 40) - 2 \\cdot {Tx} \\right ]\\left [ \\frac{{1}}{{6}}(40^3 - 40) - 2 \\cdot {Ty} \\right ]}}}} = {round(rC, 4)}"
+        f"$$r^C = \\displaystyle\\frac{{\\displaystyle |\\frac{{1}}{{6}}(40^3 - 40) - {sumDi} - {Tx} - {Ty}}}{{\\displaystyle \\sqrt{{\\left [ \\frac{1}{6}(40^3 - 40) - 2 \\cdot {Tx} \\right ]\\left [ \\frac{{1}}{{6}}(40^3 - 40) - 2 \\cdot {Ty} \\right ]}}}} = {round(rC, 4)}$$"
     )
     print(r"Розрахунки за формулою (1)(для випадку незв’язаних рангiв) дають: ")
 
@@ -193,4 +193,3 @@ else:
     print(
         f"Так як коефіцієнт Спірмена $r^C = {round(rC, 4)},$ а коефіцієнт Кендалла $r^K = {round(rK, 4)},$ то $r^C < r^K$, а це вказує на нелінійну залежність між ознаками"
     )
-
