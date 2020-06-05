@@ -18,13 +18,11 @@ def dataframe_to_latex_table(
     result += r"\begin{table}[H]" + "\n"
     result += r"\centering" + "\n"
     result += (
-        r"\begin{tabular}{" + ("c".join(["|"] * (len(df.index) + 2))) + "} " + "\n"
+        r"\begin{tabular}{" + ("c".join(["|"] * (len(df.columns) + 1))) + "} " + "\n"
     )
     result += r"\hline" + "\n"
     result += f"\\bigcell{{l}}{{{left_top_item}}} & "
-    result += (
-        " & ".join([wrap_in_bigcell(value) for value in df.index.values]) + "\\\\\n"
-    )
+    result += " & ".join([wrap_in_bigcell(value) for value in df.columns]) + "\\\\\n"
 
     for row, values in df.iteritems():
         result += "\\hline" + "\n"
