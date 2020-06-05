@@ -1,5 +1,6 @@
 import settings
 from settings import table_for_task_8
+from utils import dataframe_to_latex_table
 
 print(
     r"""\newpage
@@ -8,3 +9,4 @@ print(
 2. Розрахувати коефіцієнти Пірсона і Чупрова, зробити висновки. \\"""
 )
 
+print(dataframe_to_latex_table(table_for_task_8))

@@ -1,5 +1,5 @@
 from data.table_a7 import table
-
+from utils import wrap_in_bigcell
 
 print(
     r"""\newpage
@@ -52,14 +52,6 @@ print(
 & 
 \bigcell{l}{$\displaystyle \sum$}\\"""
 )
-
-
-def wrap_in_bigcell(x):
-    if isinstance(x, float) and int(x) == x:
-        r = int(x)
-    else:
-        r = x
-    return f"\\bigcell{{l}}{{{r}}}"
 
 
 for column, values in table.iteritems():
