@@ -18,7 +18,7 @@ def dataframe_to_latex_table(
     result += r"\begin{table}[H]" + "\n"
     result += r"\centering" + "\n"
     result += (
-        r"\begin{tabular}{" + ("c".join(["|"] * (len(df.columns) + 1))) + "} " + "\n"
+        r"\begin{tabular}{" + ("c".join(["|"] * (len(df.columns) + 2))) + "} " + "\n"
     )
     result += r"\hline" + "\n"
     result += f"\\bigcell{{l}}{{{left_top_item}}} & "

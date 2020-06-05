@@ -16,7 +16,7 @@ task_2_x4_meaning = "[!Відсоток грамотних!]"
 
 table_for_task_8 = pd.DataFrame(
     data={
-        "< 25": [
+        "До 25 років": [
             18212 * variant,
             1914 * variant,
             147 * variant,
@@ -44,7 +44,7 @@ table_for_task_8 = pd.DataFrame(
             1280 * variant,
             308 * variant,
         ],
-        "> 55": [
+        "55 і більше": [
             19 * variant,
             75 * variant,
             271 * variant,
@@ -52,8 +52,8 @@ table_for_task_8 = pd.DataFrame(
             1701 * variant,
         ],
     },
-    columns=["< 25", "25-34", "35-44", "44-54", "> 55"],
-)
+    index=["До 25 років", "25-34", "35-44", "44-54", "55 і більше"],
+).transpose()
 
 
 # ----- Do not touch this -----
