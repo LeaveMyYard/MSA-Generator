@@ -53,12 +53,12 @@ table_for_task_8 = pd.DataFrame(
         ],
     },
     index=["До 25 років", "25-34", "35-44", "44-54", "55 і більше"],
-).transpose()
+)
 
 
 # ----- Do not touch this -----
 
-sheets = [f"А.{i}" for i in range(1, 15)]
+sheets = [f"А.{i}" for i in range(1, 16)]
 
 tables = {
     sheet: pd.read_excel(r"data\stat_analiz.xlsx", sheet_name=sheet) for sheet in sheets
@@ -122,3 +122,46 @@ exp_3 = (
 
 task_7_X = tables["А.9"].loc[tables["А.9"]["Варіант"] == variant]["Ознаки1"].values[0]
 task_7_Y = tables["А.9"].loc[tables["А.9"]["Варіант"] == variant]["Ознаки2"].values[0]
+
+# ----- Task 9 -----
+
+task_9_raw_table = tables["А.15"].loc[100 * (variant - 1) + 1 : 100 * variant, :]
+columns = [
+    f"{a//1000}т-{b//1000}т"
+    for a, b in zip(range(0, 14001, 2000), range(2000, 16001, 2000))
+]
+median = [a for a in range(1000, 15001, 2000)]
+
+man = [
+    len(
+        task_9_raw_table.loc[
+            (task_9_raw_table["Gender"] == 0)
+            & (task_9_raw_table["Income"] >= a)
+            & (task_9_raw_table["Income"] < b)
+        ]
+    )
+    for a, b in zip(range(0, 14001, 2000), range(2000, 16001, 2000))
+]
+woman = [
+    len(
+        task_9_raw_table.loc[
+            (task_9_raw_table["Gender"] == 1)
+            & (task_9_raw_table["Income"] >= a)
+            & (task_9_raw_table["Income"] < b)
+        ]
+    )
+    for a, b in zip(range(0, 14001, 2000), range(2000, 16001, 2000))
+]
+
+total = [
+    len(
+        task_9_raw_table.loc[
+            (task_9_raw_table["Income"] >= a) & (task_9_raw_table["Income"] < b)
+        ]
+    )
+    for a, b in zip(range(0, 14001, 2000), range(2000, 16001, 2000))
+]
+
+task_9_table = pd.DataFrame(
+    {"Медіана": median, "Чоловіки": man, "Жінки": woman, "Всього": total}, index=columns
+).transpose()

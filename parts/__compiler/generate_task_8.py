@@ -52,7 +52,7 @@ chi2_st = n * (phi_2 - 1)
 chi2_kr = 26.296
 
 print(
-    f"Тодi $\\phi^2 = {round(phi_2, 4)} - 1 = {round(phi_2, 4) - 1}$ i $\\chi^2_{{CT}} = n\\phi^2 = {round(chi2_st, 3)}$\\"
+    f"Тодi $\\phi^2 = {round(phi_2, 4)} - 1 = {round(phi_2 - 1, 4)}$ i $\\chi^2_{{CT}} = n\\phi^2 = {round(chi2_st, 3)}$\\\\"
 )
 
 phi_2 -= 1
@@ -75,7 +75,7 @@ print(
 C = np.sqrt(chi2_st / (n * 4))
 
 print(
-    f"$$\\displaystyle C = \\displaystyle \\sqrt{{\\frac{{\\chi^2_{{CT}}}}{{n\\cdot min[m_1 - 1, m_2 - 1]}}}}= \\sqrt{{\\displaystyle \\frac{{{chi2_st}}}{{{n * 4}}}}} = {round(C, 4)}.$"
+    f"$$\\displaystyle C = \\displaystyle \\sqrt{{\\frac{{\\chi^2_{{CT}}}}{{n\\cdot min[m_1 - 1, m_2 - 1]}}}}= \\sqrt{{\\displaystyle \\frac{{{chi2_st}}}{{{n * 4}}}}} = {round(C, 4)}.$$"
 )
 
 print(
@@ -88,10 +88,10 @@ nm_chi = chi2_st - 1.64 * np.sqrt(4 * chi2_st)
 bm_chi = chi2_st + 1.64 * np.sqrt(4 * chi2_st)
 
 print(
-    f"H.M.: $\\chi^2_{{CT}} - u_{{1 - 0.05}}\\sqrt{{4\\chi^2_{{CT}}}} = {round(chi2_st, 4)} - 1.64\\sqrt{{4\\cdot{round(chi2_st, 4)}}} = {round(nm_chi, 3)}$\\"
+    f"H.M.: $\\chi^2_{{CT}} - u_{{1 - 0.05}}\\sqrt{{4\\chi^2_{{CT}}}} = {round(chi2_st, 4)} - 1.64\\sqrt{{4\\cdot{round(chi2_st, 4)}}} = {round(nm_chi, 3)}$\\\\"
 )
 print(
-    f"В.M.: $\\chi^2_{{CT}} + u_{{1 - 0.05}}\\sqrt{{4\\chi^2_{{CT}}}} = {round(chi2_st, 4)} + 1.64\\sqrt{{4\\cdot{round(chi2_st, 4)}}} = {round(bm_chi, 3)}$\\"
+    f"В.M.: $\\chi^2_{{CT}} + u_{{1 - 0.05}}\\sqrt{{4\\chi^2_{{CT}}}} = {round(chi2_st, 4)} + 1.64\\sqrt{{4\\cdot{round(chi2_st, 4)}}} = {round(bm_chi, 3)}$\\\\"
 )
 
 print(
@@ -102,14 +102,14 @@ nm_c = C - 1.64 * np.sqrt(1 / (n * 4))
 bm_c = C + 1.64 * np.sqrt(1 / (n * 4))
 
 print(
-    f"H.M.: $C - u_{{1 - 0.05}}\\sigma_C = C - u_{{1 - 0.05}}\\cdot \\displaystyle \\sqrt{{\\frac{{1}}{{\\displaystyle n \\cdot min[m_1-1,m_2-1]}}}} = {round(nm_c, 3)}$\\"
+    f"H.M.: $C - u_{{1 - 0.05}}\\sigma_C = C - u_{{1 - 0.05}}\\cdot \\displaystyle \\sqrt{{\\frac{{1}}{{\\displaystyle n \\cdot min[m_1-1,m_2-1]}}}} = {round(nm_c, 3)}$\\\\"
 )
 print(
-    f"В.M.: $C + u_{{1 - 0.05}}\\sigma_C = C + u_{{1 - 0.05}}\\cdot \\displaystyle \\sqrt{{\\frac{{1}}{{\\displaystyle n \\cdot min[m_1-1,m_2-1]}}}} = {round(bm_c, 3)}$\\"
+    f"В.M.: $C + u_{{1 - 0.05}}\\sigma_C = C + u_{{1 - 0.05}}\\cdot \\displaystyle \\sqrt{{\\frac{{1}}{{\\displaystyle n \\cdot min[m_1-1,m_2-1]}}}} = {round(bm_c, 3)}$\\\\"
 )
 
 print(
-    f"Отже, з ймовiрнiстю 95\\% iстинне значення показника $C$ буде знаходитися в промiжку $[{round(nm_c, 3)}; {round(bm_c, 3)}]$.\\ "
+    f"Отже, з ймовiрнiстю 95\\% iстинне значення показника $C$ буде знаходитися в промiжку $[{round(nm_c, 3)}; {round(bm_c, 3)}]$.\\\\ "
 )
 
 Y2 = 2 * (
@@ -125,15 +125,15 @@ Y2 = 2 * (
     + n * np.log(n)
 )
 
-print(f"Розрахуємо iнформацiйну характеристику\\\\ $Y^2 = {round(Y2, 3)}$\\")
+print(f"\\\\ Розрахуємо iнформацiйну характеристику $Y^2 = {round(Y2, 3)}$\\\\")
 
 if Y2 > chi2_kr:
     print(
-        r"Так як $Y^2 > \chi_{KP}^2 = \chi^2(0.05;16) = 26.296,$ то з ймовiрнiстю 95\% значення коефiцiєнта $Y^2$ значимо вiдрiзняється вiд нуля. "
+        r"\\\\ Так як $Y^2 > \chi_{KP}^2 = \chi^2(0.05;16) = 26.296,$ то з ймовiрнiстю 95\% значення коефiцiєнта $Y^2$ значимо вiдрiзняється вiд нуля. "
     )
 else:
     print(
-        r"Так як $Y^2 < \chi_{KP}^2 = \chi^2(0.05;16) = 26.296,$ то з ймовiрнiстю 95\% значення коефiцiєнта $Y^2$ не значимо вiдрiзняється вiд нуля. "
+        r"\\\\ Так як $Y^2 < \chi_{KP}^2 = \chi^2(0.05;16) = 26.296,$ то з ймовiрнiстю 95\% значення коефiцiєнта $Y^2$ не значимо вiдрiзняється вiд нуля. "
     )
 
 print(r"\subsection{ Коефiцiєнти Пiрсона i Чупрова}")
@@ -148,29 +148,28 @@ Kpirs = np.sqrt(phi_2 / (1 + phi_2))
 Kchup = np.sqrt(phi_2 / 16)
 
 print(
-    r"$K_{Pirs} = \displaystyle \sqrt{\displaystyle \frac{\phi^2}{1 + \phi^2}} = "
-    + f"{round(Kpirs, 3)}$\\"
+    r"$$K_{Pirs} = \displaystyle \sqrt{\displaystyle \frac{\phi^2}{1 + \phi^2}} = "
+    + f"{round(Kpirs, 3)}$$"
 )
 print(
-    r"$K_{Chup} = \displaystyle \sqrt{\displaystyle \frac{\phi^2}{(m_1 - 1)(m_2 - 1)}} = "
-    + f"{round(Kchup, 3)}$ \\"
+    r"$$K_{Chup} = \displaystyle \sqrt{\displaystyle \frac{\phi^2}{(m_1 - 1)(m_2 - 1)}} = "
+    + f"{round(Kchup, 3)}$$"
 )
 
-print(r"Розрахуємо коефiцiєнти $K_{Pirs}, K_{Chup}$ за модифiкованими формулами:\\")
+print(r"\\ Розрахуємо коефiцiєнти $K_{Pirs}, K_{Chup}$ за модифiкованими формулами:\\")
 
 Kpirs2 = np.sqrt(chi2_st / (n + chi2_st))
 Kchup2 = np.sqrt(chi2_st / (n * 16))
 
 print(
-    r"$K_{Pirs} = \displaystyle \sqrt{\displaystyle \frac{\chi_{CT}^2}{n + \chi_{CT}^2}} = "
-    + f"{round(Kpirs2, 3)}$\\"
+    r"$$K_{Pirs} = \displaystyle \sqrt{\displaystyle \frac{\chi_{CT}^2}{n + \chi_{CT}^2}} = "
+    + f"{round(Kpirs2, 3)}$$"
 )
 print(
-    r"$K_{Chup} = \displaystyle \sqrt{\displaystyle \frac{\chi_{CT}^2}{n(m_1 - 1)(m_2 - 1)}} = "
-    + f"{round(Kchup2, 3)}$ \\"
+    r"$$K_{Chup} = \displaystyle \sqrt{\displaystyle \frac{\chi_{CT}^2}{n(m_1 - 1)(m_2 - 1)}} = "
+    + f"{round(Kchup2, 3)}$$"
 )
 
 print(
-    r"Результати розрахункiв за рiзними формулами збiглися. Результат, отриманий за формулою $K_{Chup}$, бiльш точний, тому що враховується кiлькiсть груп у кожнiй ознацi."
+    r"\\ Результати розрахункiв за рiзними формулами збiглися. Результат, отриманий за формулою $K_{Chup}$, бiльш точний, тому що враховується кiлькiсть груп у кожнiй ознацi."
 )
-

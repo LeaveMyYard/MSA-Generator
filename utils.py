@@ -24,7 +24,7 @@ def dataframe_to_latex_table(
     result += f"\\bigcell{{l}}{{{left_top_item}}} & "
     result += " & ".join([wrap_in_bigcell(value) for value in df.columns]) + "\\\\\n"
 
-    for row, values in df.iteritems():
+    for row, values in df.iterrows():
         result += "\\hline" + "\n"
         result += wrap_in_bigcell(row)
         result += " & "

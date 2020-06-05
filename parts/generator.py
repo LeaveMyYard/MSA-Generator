@@ -9,5 +9,6 @@ def generate():
     from .__compiler import generate_task_6
     from .__compiler import generate_task_7
     from .__compiler import generate_task_8
+    from .__compiler import generate_task_9
     from .__compiler import generate_footer
     
