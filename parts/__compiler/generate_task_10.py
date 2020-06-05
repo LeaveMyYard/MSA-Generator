@@ -55,7 +55,7 @@ raw_data = settings.task_10_table_raw.values
 
 xj = np.mean(raw_data, axis=0)
 
-d_xi = np.sqrt(np.sum((raw_data - xj) ** 2, axis=0) / (len(xj) - 1))
+d_xi = np.sqrt(np.sum((raw_data - xj) ** 2, axis=0) / (len(raw_data) - 1))
 
 z = (raw_data - xj) / d_xi
 
