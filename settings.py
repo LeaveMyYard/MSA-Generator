@@ -55,6 +55,8 @@ table_for_task_8 = pd.DataFrame(
     index=["До 25 років", "25-34", "35-44", "44-54", "55 і більше"],
 )
 
+task_10_classification_countries = list(range(33, 43))
+
 
 # ----- Do not touch this -----
 
@@ -165,3 +167,17 @@ total = [
 task_9_table = pd.DataFrame(
     {"Медіана": median, "Чоловіки": man, "Жінки": woman, "Всього": total}, index=columns
 ).transpose()
+
+
+# ----- Task 10 -----
+
+task_10_classification_rows = [
+    tables["А.11"].loc[tables["А.11"]["Варіант"] == variant][f"Ознаки{i}"].values[0]
+    for i in range(1, 5)
+]
+
+task_10_table_raw = (
+    tables["А.4"]
+    .loc[tables["А.4"]["№ з/п"].isin(task_10_classification_countries)]
+    .filter(items=(task_10_classification_rows))
+)

@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import typing
 
 
@@ -38,3 +39,19 @@ def dataframe_to_latex_table(
     result += r"\end{table}"
 
     return result
+
+
+def array_2d_to_latex(arr: np.ndarray, rounding: int = 4) -> str:
+    return (
+        r"\begin{table}[H]"
+        + "\n"
+        + r"\centering"
+        + "\n"
+        + r"\begin{tabular}{"
+        + " ".join(["l"] * arr.shape[0])
+        + "}\n"
+        + "\\\\\n".join(["& ".join([str(round(n, rounding)) for n in a]) for a in arr])
+        + "\\\\\n"
+        + r"\end{tabular}"
+        + r"\end{table}"
+    )
