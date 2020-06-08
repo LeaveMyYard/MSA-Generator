@@ -1,14 +1,14 @@
 import pandas as pd
 
 # ----- Setup this -----
-name = "Жукова Павла Петровича"
-variant = 5
+name = "Мороза Дмитра Володимировича"
+variant = 9
 overleaf_project_directory = (
     r"C:\Users\LeaveMyYard\Desktop\Многомерный Стат. Анализ\MSA-TEX"
 )
 
 task_1_y_meaning = "[!Продуктивнiсть працi!]"
-task_1_x_meaning = "[!Премії для одного виробника!]"
+task_1_x_meaning = "[!Середньорiчна вартiстьс виробничих фондiв!]"
 
 task_2_y_meaning = "[!Смертнiсть серед малюкiв!]"
 task_2_x1_meaning = "[!Чисельність населення!]"
@@ -172,8 +172,6 @@ task_9_table = pd.DataFrame(
 
 
 # ----- Task 10 -----
-
-task_10_classification_countries = [val + 1 for val in task_10_classification_countries]
 
 task_10_classification_rows = [
     tables["А.11"].loc[tables["А.11"]["Варіант"] == variant][f"Ознаки{i}"].values[0]

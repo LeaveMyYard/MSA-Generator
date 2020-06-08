@@ -1,9 +1,5 @@
 import pandas as pd
 import numpy as np
-from scipy.stats import t as Student
-from scipy.stats import norm
-from scipy.stats import f as fisher
-from scipy.stats import chi2
 
 df = pd.read_csv("C:\\Users\\Kostya\\Desktop\\Table_2.csv")
 
