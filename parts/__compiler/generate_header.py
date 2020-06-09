@@ -13,6 +13,7 @@ print(
 \usepackage{graphicx}        
 \usepackage{lscape}
 \usepackage{pdflscape}
+\usepackage{pdfpages}
 \usepackage{hyperref}        
 \usepackage{hyphenat}        
 \usepackage{listings}        

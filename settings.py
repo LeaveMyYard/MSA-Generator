@@ -57,7 +57,12 @@ table_for_task_8 = pd.DataFrame(
     index=["До 25 років", "25-34", "35-44", "44-54", "55 і більше"],
 )
 
-task_10_classification_countries = list(range(33, 43))
+task_10_classification_countries = list(range(41, 51))
+
+task_12_discrimination_class_1 = [41]
+task_12_discrimination_class_2 = list(range(42, 51))
+
+task_12_new = [1, 2, 3, 4]
 
 
 # ----- Do not touch this -----
@@ -183,5 +188,29 @@ task_10_classification_rows = [
 task_10_table_raw = (
     tables["А.4"]
     .loc[tables["А.4"]["№ з/п"].isin(task_10_classification_countries)]
+    .filter(items=(task_10_classification_rows))
+)
+
+# ----- Task 12 -----
+
+task_12_table_1 = (
+    tables["А.4"]
+    .loc[
+        tables["А.4"]["№ з/п"].isin([val + 1 for val in task_12_discrimination_class_1])
+    ]
+    .filter(items=(task_10_classification_rows))
+)
+
+task_12_table_2 = (
+    tables["А.4"]
+    .loc[
+        tables["А.4"]["№ з/п"].isin([val + 1 for val in task_12_discrimination_class_2])
+    ]
+    .filter(items=(task_10_classification_rows))
+)
+
+task_12_table_new = (
+    tables["А.4"]
+    .loc[tables["А.4"]["№ з/п"].isin([val + 1 for val in task_12_new])]
     .filter(items=(task_10_classification_rows))
 )
