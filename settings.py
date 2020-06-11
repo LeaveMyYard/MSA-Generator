@@ -73,6 +73,8 @@ tables = {
     sheet: pd.read_excel(r"data\stat_analiz.xlsx", sheet_name=sheet) for sheet in sheets
 }
 
+task_14_table = pd.DataFrame(tables["А.6"].iloc[0:10], columns=[8, 11, 12, 13, 17])
+
 # ----- Task 1, 2 -----
 
 task_1_y = tables["А.1"].loc[tables["А.1"]["Варіант"] == variant]["Y"].values[0]
