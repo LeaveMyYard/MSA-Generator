@@ -74,6 +74,7 @@ tables = {
 }
 
 task_14_table = pd.DataFrame(tables["А.6"].iloc[0:10], columns=[8, 11, 12, 13, 17])
+task_15_table = pd.DataFrame(tables["А.4"].iloc[41:52], columns=[1, 7, 8, 10])
 
 # ----- Task 1, 2 -----
 
