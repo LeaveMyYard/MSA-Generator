@@ -1,14 +1,14 @@
 import pandas as pd
 
 # ----- Setup this -----
-name = "Мороза Дмитра Володимировича"
-variant = 9
+name = "Жукова Павла Петровича"
+variant = 5
 overleaf_project_directory = (
     r"C:\Users\LeaveMyYard\Desktop\Многомерный Стат. Анализ\MSA-TEX"
 )
 
 task_1_y_meaning = "[!Продуктивнiсть працi!]"
-task_1_x_meaning = "[!Середньорiчна вартiстьс виробничих фондiв!]"
+task_1_x_meaning = "[!Премії для одного виробника!]"
 
 task_2_y_meaning = "[!Смертнiсть серед малюкiв!]"
 task_2_x1_meaning = "[!Чисельність населення!]"
@@ -57,7 +57,12 @@ table_for_task_8 = pd.DataFrame(
     index=["До 25 років", "25-34", "35-44", "44-54", "55 і більше"],
 )
 
-task_10_classification_countries = list(range(33, 43))
+task_10_classification_countries = list(range(41, 51))
+
+task_12_discrimination_class_1 = [41]
+task_12_discrimination_class_2 = list(range(42, 51))
+
+task_12_new = [1, 2, 3, 4]
 
 
 # ----- Do not touch this -----
@@ -173,6 +178,8 @@ task_9_table = pd.DataFrame(
 
 # ----- Task 10 -----
 
+task_10_classification_countries = [val + 1 for val in task_10_classification_countries]
+
 task_10_classification_rows = [
     tables["А.11"].loc[tables["А.11"]["Варіант"] == variant][f"Ознаки{i}"].values[0]
     for i in range(1, 5)
@@ -181,5 +188,29 @@ task_10_classification_rows = [
 task_10_table_raw = (
     tables["А.4"]
     .loc[tables["А.4"]["№ з/п"].isin(task_10_classification_countries)]
+    .filter(items=(task_10_classification_rows))
+)
+
+# ----- Task 12 -----
+
+task_12_table_1 = (
+    tables["А.4"]
+    .loc[
+        tables["А.4"]["№ з/п"].isin([val + 1 for val in task_12_discrimination_class_1])
+    ]
+    .filter(items=(task_10_classification_rows))
+)
+
+task_12_table_2 = (
+    tables["А.4"]
+    .loc[
+        tables["А.4"]["№ з/п"].isin([val + 1 for val in task_12_discrimination_class_2])
+    ]
+    .filter(items=(task_10_classification_rows))
+)
+
+task_12_table_new = (
+    tables["А.4"]
+    .loc[tables["А.4"]["№ з/п"].isin([val + 1 for val in task_12_new])]
     .filter(items=(task_10_classification_rows))
 )

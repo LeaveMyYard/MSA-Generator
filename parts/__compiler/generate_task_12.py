@@ -119,6 +119,7 @@ print(
     " + ".join(
         [f"{round(val, 5)}x_{{{i+1}}}" for i, val in enumerate(A.reshape((4,)))]
     ),
+    "$",
 )
 
 print(r"Розрахуємо значення дискримінантної функції для кожної країни обох класів: \\")
@@ -159,4 +160,3 @@ for i, val in enumerate(settings.task_12_table_new.values):
 print(
     r"Ті краіни, в яких $f$ меньше, ніж $C$ віднесимо до другого класу, інші - до першого."
 )
-
